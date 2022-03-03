@@ -21,7 +21,8 @@ public class ConfigCar {
 //        return p;
 //    }
 
-    //auto wiring
+    //auto wire$Fsi2879
+
     @Bean
     Person person(Car car){
         Person p = new Person();

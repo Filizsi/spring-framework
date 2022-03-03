@@ -7,8 +7,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @Component
 public class Java {
-        OfficeHours officeHours;
-
+    OfficeHours officeHours;
 
 
     //2. constructor injection
@@ -19,7 +18,7 @@ public class Java {
 
     //1 field injection
 //    @Autowired
-    public void getTeachingHours(){
-        System.out.println("Weekly teaching hours : " +(20+officeHours.officeHours()));
+    public void getTeachingHours() {
+        System.out.println("Weekly teaching hours : " + (20 + officeHours.officeHours()));
     }
 }
