@@ -1,12 +1,22 @@
 <!DOCTYPE html>
+//embedded thymeleaf into html tag
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+//th embedded into html
 <h2 th:text="${name}"></h2>
 <h4 th:text="${course}"></h4>
+<h2 th:text="${subject}"></h2>
+<h2 th:text="${id}"></h2>
+<h2 th:text="${numbers.get(1)}"></h2>
+<h2 th:text="${student.getFirstName()}"></h2>
+//even we don't need to call getter method
+<h2 th:text="${student.lastname}"></h2>
+
+
 
 
 </body>
