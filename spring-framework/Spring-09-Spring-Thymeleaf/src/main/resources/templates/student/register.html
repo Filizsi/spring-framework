@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!--retrieving data from properties file message.properties-->
+    <!--title is the browser tab name in the application-->
+    <!--    thymeleaf override the title here-->
+    <title th:text="#{index.page.title}">Title</title>
 </head>
 <body>
 //th embedded into html
@@ -21,8 +25,9 @@
 
 <a th:href="@{/student/welcome}">Link1</a><br>
 
-<!--adding parameters to link-->
+<!--adding parameters to link  .../student/welcome?is=3&ndash;&gt;-->
 <a th:href="@{/student/welcome(id=3)}">Link2</a><br>
+<a th:href="@{/student/welcome(year19091)}">Link2</a><br>
 
 <!--bring it from model-->
 <a th:href="@{/student/welcome(name=${students.get(0).firstName})}">Link3</a><br>
@@ -32,7 +37,14 @@
     <li th:each="student : ${students}" th:text="${student.firstName}"></li>
 </ul>
 
+<!--Conditional logic-->
+<div th:text="${students.get(0).age > 25 ? 'ELIGIBLE' : 'NOT ELIGIBLE'}"></div>
 
+<div>
+</div>
+<span th:if="${students.get(0).getState() == 'Arizona'}">Arizona</span>
+<span th:unless="${students.get(0).getState() == 'Arizona'}">Not Arizona</span>
+</div>
 
 
 </body>

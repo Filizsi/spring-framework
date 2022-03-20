@@ -20,8 +20,12 @@
 
 <img th:src="@{/images/welcome-38249.png}"/>
 
+<!--reusable common parts, static for all pages in application-->
+<!--1.create  fragment file-->
 <div th:replace="/fragments/index :: footer-menu">Footer</div>
 <div th:replace="/fragments/index :: main-menu">Main Menu</div>
+
+
 
 </body>
 </html>
