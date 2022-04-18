@@ -10,4 +10,6 @@ public class Employee {
     private int id;
     private String name;
 
+    //raw is missing, whenever we created object with new, it's gonna generate the raw for us
+
 }
