@@ -1,11 +1,9 @@
 package com.cydeo.repository;
 
-import com.cydeo.entity.Car;
+import com.cydeo.entity.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CarRepository extends JpaRepository<Car,Long> {
-//we can build our own methods here- queries
-
+public interface DepartmentRepository extends JpaRepository<Department,Integer> {
 }
