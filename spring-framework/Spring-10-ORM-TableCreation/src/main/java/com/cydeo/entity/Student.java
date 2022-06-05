@@ -31,7 +31,7 @@ public class Student {
     private LocalDate birthdate;
     @Column(columnDefinition = "TIME")
     private LocalTime birthTime;
-    @Column(columnDefinition = "TIMESTAMP")
+    @Column(columnDefinition = "DATETIME")
     private LocalDate birthDateAndTime;
 
     //if you have enum, it takes the column type as integer
