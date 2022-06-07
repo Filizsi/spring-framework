@@ -30,7 +30,7 @@ public class CourseController_ResponseEntity_2 {
     @GetMapping("{id}")
     public ResponseEntity<CourseDTO> getCourseById(@PathVariable("id") Long id){
         return ResponseEntity
-                .ok(courseService.getCourseById(id));
+                .ok(courseService.getCourseById(id)); //ok getting body also
     }
 
     @PostMapping

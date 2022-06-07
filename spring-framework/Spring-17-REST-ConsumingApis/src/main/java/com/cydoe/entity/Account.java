@@ -1,6 +1,7 @@
-package com.cydeo.entity;
+package com.cydoe.entity;
 
-import com.cydeo.enums.UserRole;
+
+import com.cydoe.enums.UserRole;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -15,8 +16,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Table(name = "account_details")
-//@JsonIgnoreProperties(value = {"state","postalCode"},ignoreUnknown = true)//ignore these field output the json, don't show
-@JsonIgnoreProperties(value = {"hibernateLazyInitializer"}, ignoreUnknown = true)
+@JsonIgnoreProperties(value = {"hibernateLazyInitializer"},ignoreUnknown = true)
 public class Account extends BaseEntity {
 
     private String name;
@@ -33,7 +33,7 @@ public class Account extends BaseEntity {
     private UserRole role = UserRole.USER;
 
     @OneToOne(mappedBy = "account")
-    @JsonBackReference //is the back part of the reference - it'll be omitted from serialization, we don't see the User in account
+    @JsonBackReference //is the back part of reference - it will be omitted from serialization
     private User user;
-//if there is relationship between the classes @@JsonBackReference
+
 }

@@ -1,6 +1,5 @@
-package com.cydeo.entity;
+package com.cydoe.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,22 +12,22 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @Table(name = "user_account")
-@JsonIgnoreProperties(value = {"hibernateLazyInitializer"}, ignoreUnknown = true)
+@JsonIgnoreProperties(value = {"hibernateLazyInitializer"},ignoreUnknown = true)
 public class User extends BaseEntity {
 
-    @JsonIgnore//nosee on ui or postman
+//    @JsonIgnore
     private String email;
 
-    //when we use get method don't show it, when we use post methods show it
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)//show me when I am posting, don't show me when I get it
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
+
 
     private String username;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "account_details_id")
-    @JsonManagedReference
-    //is the forward part of the referebce - the one that gets serialize normally, we'll see account in user
+    @JsonManagedReference //is the forward part of reference - the one that gets serialized normally
     private Account account;
 
 }
