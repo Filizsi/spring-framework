@@ -24,4 +24,20 @@ public class Assignment4ReverseLinkedList {
         list.tail.next = null;
         list.head = previous;
     }
+
+
+    public void reverseLinkedList(MySinglyLinkedList node){
+        Node prev=node.head;
+        Node current = node.head.next;
+        while(current!=null){
+            Node nextNode = current.next;
+            current.next=prev;
+            prev=current;
+            current=nextNode;
+        }
+        node.tail=node.head;
+
+        node.tail.next=null;
+        node.head=prev;
+    }
 }
